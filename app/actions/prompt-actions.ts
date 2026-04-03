@@ -32,7 +32,7 @@ export async function listPrompts(): Promise<PromptDTO[]> {
 export async function createPrompt(role: string, task: string): Promise<PromptDTO> {
   try {
     // 🔥 [핵심 조치 1] 버튼 누를 때마다 실시간으로 환경변수 읽기
-    // 🔥 [핵심 조치 2] .trim()을 사용해 눈에 안 보이는 공백/엔터 찌꺼기 완벽 제거
+    // 🔥 [핵심 조치 2] .trim()을 사용해 눈에 안 보이는 공백/엔터 찌꺼기 완벽 제거_AI_API_KEY 
     const apiKey = (process.env.GOOGLE_GENERATIVE_AI_API_KEY || "").trim();
 
     // 터미널에 진짜 글자 수가 몇 개인지 출력해 봅니다. (보통 39글자입니다)
