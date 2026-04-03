@@ -1,0 +1,19 @@
+// 1. Prisma 클라이언트 (데이터를 넣고 빼주는 로봇) 설정
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 2. DB 창고 위치 설정 (sqlite를 사용하고, 파일 이름은 dev.db로 하겠다!)
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// 3. 우리가 만든 프롬프트 보관함(표) 설계도
+model Prompt {
+  id        Int      @id @default(autoincrement())
+  role      String   
+  task      String   
+  result    String   
+  createdAt DateTime @default(now()) 
+}
